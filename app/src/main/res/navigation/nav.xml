@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav"
+    app:startDestination="@id/newsFragment2">
+    <fragment
+        android:id="@+id/newsFragment2"
+        android:name="com.example.latihandatabinding.NewsFragment"
+        android:label="NewsFragment" >
+        <action
+            android:id="@+id/action_newsFragment2_to_detailNewsFragment"
+            app:destination="@id/detailNewsFragment" />
+        <argument
+            android:name="databerita"
+            app:argType="com.example.latihandatabinding.DataNews" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailNewsFragment"
+        android:name="com.example.latihandatabinding.DetailNewsFragment"
+        android:label="DetailNewsFragment" >
+        <argument
+            android:name="databerita"
+            app:argType="com.example.latihandatabinding.DataNews" />
+    </fragment>
+</navigation>

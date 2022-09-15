@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="databerita"
+            type="com.example.latihandatabinding.DataNews" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        tools:context=".DetailNewsFragment">
+
+        <TextView
+            android:id="@+id/detailJudulBerita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@{databerita.judul}"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageDetalBerita"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@id/detailJudulBerita"
+            android:layout_marginTop="20dp"
+            app:imageResource= "@{databerita.gambar}"
+            android:contentDescription="@string/gambar_berita" />
+
+        <TextView
+            android:id="@+id/detailBeritaTanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageDetalBerita"
+            android:layout_marginTop="20dp"
+            android:text="@{databerita.tanggal}" />
+
+        <TextView
+            android:id="@+id/detailBeritaPenulis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageDetalBerita"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/detailBeritaTanggal"
+            android:text="@{databerita.penulis}"
+
+
+            />
+
+        <ScrollView
+            android:id="@+id/scrollableContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/detailBeritaPenulis"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/detailIsiBerita"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{databerita.isiBerita}"
+                android:textSize="16sp"/>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+</layout>
